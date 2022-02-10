@@ -1,57 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+
+import Users from "./features/users/Users";
+import AddUserForm from "./components/AddUserForm";
 
 function App() {
+  const [showAdd, setShowAdd] = useState(false);
+  const handleShowAdd = () => setShowAdd(true);
+  const handleCloseAdd = () => setShowAdd(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1 className="mt-4 mb-5">Dashboard</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card border="light">
+            <Card.Header>
+              <Row className="align-items-center">
+                <Col>
+                  <h2>User List</h2>
+                </Col>
+                <Col className="d-flex justify-content-end">
+                  <Button onClick={handleShowAdd}>Add New User</Button>
+                </Col>
+              </Row>
+            </Card.Header>
+            <Card.Body>
+              <Users />
+              <AddUserForm showAdd={showAdd} handleCloseAdd={handleCloseAdd} />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
