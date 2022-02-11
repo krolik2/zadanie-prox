@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/zadanie-prox/static/css/main.56e6221f.css",
+    "main.js": "/zadanie-prox/static/js/main.c1f9c3be.js",
+    "index.html": "/zadanie-prox/index.html",
+    "main.56e6221f.css.map": "/zadanie-prox/static/css/main.56e6221f.css.map",
+    "main.c1f9c3be.js.map": "/zadanie-prox/static/js/main.c1f9c3be.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56e6221f.css",
+    "static/js/main.c1f9c3be.js"
+  ]
+}
